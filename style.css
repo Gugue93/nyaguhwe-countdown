@@ -1,0 +1,724 @@
+/* ==============================
+   GENERAL SETTINGS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #102e59;
+    --dark: #07152e;
+    --red: #e63946;
+    --yellow: #ffd43b;
+    --white: #ffffff;
+    --green: #25d366;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+
+    color: var(--white);
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(230, 57, 70, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 212, 59, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050c1c,
+            #102e59,
+            #07152e
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 40px 25px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==============================
+   FLOATING DECORATIONS
+============================== */
+
+.decoration {
+    position: fixed;
+
+    color: var(--yellow);
+
+    opacity: 0.5;
+
+    animation: float 5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.star-one {
+    top: 10%;
+    left: 8%;
+    font-size: 40px;
+}
+
+.star-two {
+    top: 35%;
+    right: 8%;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+.star-three {
+    bottom: 15%;
+    left: 10%;
+    font-size: 45px;
+    animation-delay: 2s;
+}
+
+.star-four {
+    top: 70%;
+    right: 12%;
+    font-size: 25px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(20deg);
+    }
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.army-mark {
+    width: 60px;
+    height: 60px;
+
+    margin: auto auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--red);
+
+    color: white;
+
+    border: 3px solid var(--white);
+
+    border-radius: 50%;
+
+    font-size: 32px;
+
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+}
+
+.church-name {
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.citadel-name {
+    font-size: 12px;
+
+    color: var(--yellow);
+
+    letter-spacing: 3px;
+
+    margin-top: 7px;
+}
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+
+.hero {
+    text-align: center;
+}
+
+.top-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: var(--yellow);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.pulse-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #40e98a;
+
+    border-radius: 50%;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(45px, 9vw, 85px);
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-top: 30px;
+
+    text-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.highlight {
+    display: block;
+
+    color: var(--yellow);
+
+    text-shadow: 0 0 30px rgba(255,212,59,0.3);
+}
+
+.description {
+    color: #d4e0ef;
+
+    margin-top: 22px;
+
+    font-size: 17px;
+}
+
+.event-tag {
+    display: inline-flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    background: rgba(230, 57, 70, 0.18);
+
+    border: 1px solid rgba(230, 57, 70, 0.5);
+
+    padding: 12px 20px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==============================
+   COUNTDOWN
+============================== */
+
+.countdown-section {
+    margin-top: 65px;
+
+    text-align: center;
+}
+
+.countdown-heading {
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+
+    color: var(--yellow);
+
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.time-card {
+    padding: 25px 10px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.14),
+        rgba(255,255,255,0.04)
+    );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+.time-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--yellow);
+
+    box-shadow: 0 15px 35px rgba(255,212,59,0.12);
+}
+
+.time-number {
+    font-size: clamp(35px, 7vw, 65px);
+
+    font-weight: 900;
+
+    color: var(--yellow);
+
+    font-variant-numeric: tabular-nums;
+
+    transition: transform 0.2s;
+}
+
+.time-label {
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #d4e0ef;
+}
+
+.countdown-message {
+    margin-top: 25px;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   PROGRESS BAR
+============================== */
+
+.progress-section {
+    margin-top: 55px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+#progress-percent {
+    color: var(--yellow);
+}
+
+.progress-track {
+    height: 14px;
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 50px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: linear-gradient(
+        90deg,
+        var(--red),
+        var(--yellow)
+    );
+
+    border-radius: 50px;
+
+    transition: width 1s ease;
+}
+
+.progress-caption {
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    color: #b7c7db;
+}
+
+
+/* ==============================
+   EVENT INFORMATION
+============================== */
+
+.event-info {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.info-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,0.07);
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.info-icon {
+    font-size: 30px;
+}
+
+.info-card h3 {
+    font-size: 11px;
+
+    color: var(--yellow);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.info-card p {
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   FUN MESSAGE
+============================== */
+
+.fun-message {
+    text-align: center;
+
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background: rgba(255,212,59,0.08);
+
+    border: 1px solid rgba(255,212,59,0.25);
+
+    border-radius: 20px;
+}
+
+.quote-icon {
+    font-size: 45px;
+
+    color: var(--yellow);
+}
+
+.fun-message p {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.fun-message span {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--yellow);
+
+    font-weight: 800;
+}
+
+
+/* ==============================
+   WHATSAPP SHARING
+============================== */
+
+.share-section {
+    text-align: center;
+
+    margin-top: 55px;
+}
+
+.share-section h2 {
+    font-size: 22px;
+
+    font-weight: 900;
+}
+
+.share-section p {
+    margin-top: 12px;
+
+    color: #c8d5e6;
+}
+
+.whatsapp-button {
+    margin-top: 25px;
+
+    padding: 17px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: var(--green);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(37,211,102,0.2);
+
+    transition: 0.3s;
+}
+
+.whatsapp-button span {
+    font-size: 20px;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.07);
+
+    background: #1ebe5d;
+}
+
+.share-status {
+    font-size: 12px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+
+    margin-top: 65px;
+}
+
+.footer-line {
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+
+    margin-bottom: 25px;
+}
+
+footer p {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+footer h3 {
+    color: var(--yellow);
+
+    font-size: 18px;
+
+    margin: 10px 0;
+}
+
+.footer-small {
+    color: #9caec4;
+
+    font-size: 9px;
+}
+
+
+/* ==============================
+   CONFETTI
+============================== */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVENESS
+============================== */
+
+@media(max-width: 600px) {
+
+    .container {
+        padding: 30px 12px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .time-card {
+        padding: 20px 5px;
+
+        border-radius: 13px;
+    }
+
+    .time-label {
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+    .event-info {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .fun-message p {
+        font-size: 15px;
+    }
+
+    .share-section h2 {
+        font-size: 18px;
+    }
+
+    .decoration {
+        opacity: 0.25;
+    }
+}
+
+
+/* Accessibility: reduce motion */
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
