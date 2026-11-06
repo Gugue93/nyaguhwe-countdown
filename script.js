@@ -160,7 +160,7 @@ function updateCountdown() {
    5. WHATSAPP SHARE FUNCTION
 ================================= */
 
-const shareButton =
+/* const shareButton =
     document.getElementById("share-button");
 
 shareButton.addEventListener("click", function() {
@@ -196,7 +196,7 @@ shareButton.addEventListener("click", function() {
         "noopener,noreferrer"
     );
 
-});
+}); */
 
 
 /* =================================
